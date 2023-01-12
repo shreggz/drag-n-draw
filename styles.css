@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
 .canvas {
     width: 500px;
     height: 500px;
@@ -8,6 +10,11 @@
 
 .title {
     text-align: center;
+    font-family: 'Audiowide', cursive;
+}
+
+button {
+    font-family: 'Audiowide', cursive;
 }
 
 body {
@@ -17,15 +24,26 @@ body {
 
 .grid-settings {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 24px;
 }
 
 .color-settings {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
 }
 
 .canvas-container {
     display: flex;
     justify-content: center;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
