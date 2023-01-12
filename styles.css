@@ -5,3 +5,27 @@
     border-width: 1px;
     border-color: black;
 }
+
+.title {
+    text-align: center;
+}
+
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+.grid-settings {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.color-settings {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+}
