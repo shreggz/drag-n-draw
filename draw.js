@@ -1,7 +1,9 @@
 let gridSize = 16;
-createGrid(gridSize);
+let pixelColor = "#000000";
 
-function createGrid(gridSize) {
+createCanvas(gridSize);
+
+function createCanvas(gridSize) {
     let grid = document.querySelector(".grid");
     grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
@@ -10,11 +12,10 @@ function createGrid(gridSize) {
     for (let i = 1; i <= gridArea; i++) {
         let pixel = document.createElement("div");
         pixel.className = "pixel";
-        grid.insertAdjacentElement("beforeend", pixel);
-
-        pixel.addEventListener("mouseover", function() {
-            pixel.style.backgroundColor = "#000000";
+        pixel.addEventListener("mouseover", () => {
+            pixel.style.backgroundColor = pixelColor;
         })
+        grid.insertAdjacentElement("beforeend", pixel);
     }
 }
 
