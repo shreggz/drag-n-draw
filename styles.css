@@ -4,9 +4,11 @@
     background-color: #483248;
 }
 
-.canvas {
+.grid {
+    display: grid;
     width: 500px;
     height: 500px;
+    background-color: white;
 }
 
 .title {
@@ -48,10 +50,6 @@ body {
 .canvas-container {
     display: flex;
     justify-content: center;
-}
-
-.canvas {
-    background-color: white;
 }
 
 .board {
