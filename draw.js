@@ -9,8 +9,12 @@ function createGrid(gridSize) {
     let gridArea = gridSize * gridSize;
     for (let i = 1; i <= gridArea; i++) {
         let pixel = document.createElement("div");
+        pixel.className = "pixel";
         grid.insertAdjacentElement("beforeend", pixel);
-        pixel.style.backgroundColor = "#ffffff";
+
+        pixel.addEventListener("mouseover", function() {
+            pixel.style.backgroundColor = "#000000";
+        })
     }
 }
 
