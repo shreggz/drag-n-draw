@@ -1,6 +1,15 @@
 let gridSize = 16;
 let pixelColor = "#000000";
 
+const small = document.getElementById("small");
+small.addEventListener("click", smallPixels);
+
+const medium = document.getElementById("medium");
+medium.addEventListener("click", mediumPixels)
+
+const large = document.getElementById("large");
+large.addEventListener("click", largePixels)
+
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
@@ -17,6 +26,21 @@ function createCanvas(gridSize) {
         })
         grid.insertAdjacentElement("beforeend", pixel);
     }
+}
+
+function smallPixels() {
+    gridSize = 64;
+    createCanvas(gridSize);
+}
+
+function mediumPixels(gridSize) {
+    gridSize = 32;
+    createCanvas(gridSize);
+}
+
+function largePixels(gridSize) {
+    gridSize = 16;
+    createCanvas(gridSize);
 }
 
 console.log("hi");
