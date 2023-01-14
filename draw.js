@@ -29,18 +29,28 @@ function createCanvas(gridSize) {
 }
 
 function smallPixels() {
+    clearCanvas();
     gridSize = 64;
     createCanvas(gridSize);
 }
 
 function mediumPixels(gridSize) {
+    clearCanvas();
     gridSize = 32;
     createCanvas(gridSize);
 }
 
 function largePixels(gridSize) {
+    clearCanvas();
     gridSize = 16;
     createCanvas(gridSize);
+}
+
+function clearCanvas() {
+    const clearPixels = document.getElementsByClassName("pixel");
+    for (pixel of clearPixels) {
+        pixel.style.backgroundColor = "#ffffff";
+    }
 }
 
 console.log("hi");
