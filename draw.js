@@ -13,6 +13,9 @@ large.addEventListener("click", largePixels)
 const clear = document.getElementById("clear");
 clear.addEventListener("click", clearCanvas)
 
+const eraser = document.getElementById("eraser");
+eraser.addEventListener("click", erasePixels);
+
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
@@ -54,6 +57,10 @@ function clearCanvas() {
     for (pixel of clearPixels) {
         pixel.style.backgroundColor = "#ffffff";
     }
+}
+
+function erasePixels() {
+    pixelColor = "#ffffff";
 }
 
 console.log("hi");
