@@ -16,6 +16,9 @@ clear.addEventListener("click", clearCanvas)
 const eraser = document.getElementById("eraser");
 eraser.addEventListener("click", erasePixels);
 
+const solid = document.getElementById("solid");
+solid.addEventListener("click", solidPixels);
+
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
@@ -64,6 +67,10 @@ function clearCanvas() {
 
 function erasePixels() {
     pixelColor = "#ffffff";
+}
+
+function solidPixels() {
+    pixelColor = "#000000";
 }
 
 console.log("hi");
