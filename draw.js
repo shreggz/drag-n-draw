@@ -37,18 +37,21 @@ function createCanvas(gridSize) {
 function smallPixels() {
     clearCanvas();
     gridSize = 64;
+    pixelColor = "#000000"
     createCanvas(gridSize);
 }
 
 function mediumPixels(gridSize) {
     clearCanvas();
     gridSize = 32;
+    pixelColor = "#000000"
     createCanvas(gridSize);
 }
 
 function largePixels(gridSize) {
     clearCanvas();
     gridSize = 16;
+    pixelColor = "#000000"
     createCanvas(gridSize);
 }
 
