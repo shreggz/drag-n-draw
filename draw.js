@@ -10,6 +10,9 @@ medium.addEventListener("click", mediumPixels)
 const large = document.getElementById("large");
 large.addEventListener("click", largePixels)
 
+const clear = document.getElementById("clear");
+clear.addEventListener("click", clearCanvas)
+
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
