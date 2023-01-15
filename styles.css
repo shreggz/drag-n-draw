@@ -29,6 +29,18 @@ button {
     background-color: #003153;
     color: #DAA520;
     padding: 8px;
+    cursor: pointer;
+    box-shadow: 1px 2px #999;
+}
+
+button:hover {
+    background-color: #032640;
+}
+
+button:active {
+    background-color: #032640;
+    box-shadow: 0px 1px #032640;
+    transform: translateY(1px);
 }
 
 body {
