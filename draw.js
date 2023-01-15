@@ -19,6 +19,9 @@ eraser.addEventListener("click", erasePixels);
 const solid = document.getElementById("solid");
 solid.addEventListener("click", solidPixels);
 
+const rainbow = document.getElementById("rainbow");
+rainbow.addEventListener("click", rainbowPixels);
+
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
@@ -71,6 +74,15 @@ function erasePixels() {
 
 function solidPixels() {
     pixelColor = "#000000";
+}
+
+function rainbowPixels() {
+    const randomPixels = Array.from(document.getElementsByClassName("pixel"));
+    randomPixels.forEach(randomColorGenerator)
+}
+
+function randomColorGenerator() {
+    pixelColor = "#"+Math.floor(Math.random()*16777215).toString(16);
 }
 
 console.log("hi");
