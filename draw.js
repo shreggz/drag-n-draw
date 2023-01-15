@@ -78,11 +78,15 @@ function solidPixels() {
 
 function rainbowPixels() {
     const randomPixels = Array.from(document.getElementsByClassName("pixel"));
-    randomPixels.forEach(randomColorGenerator)
+    randomPixels.forEach(randomColorGenerator);
 }
 
 function randomColorGenerator() {
-    pixelColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+    const randomR = Math.floor(Math.random() * 256);
+    const randomG = Math.floor(Math.random() * 256);
+    const randomB = Math.floor(Math.random() * 256);
+    const randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    pixelColor = randomColor;
 }
 
 console.log("hi");
