@@ -12,7 +12,8 @@ Pixels are colored in by hovering rather than clicking because I wanted the drag
 I plan on revisiting this to add features such as:
 - A color picker to have more options
 - A better random color generating algorithm so the rainbow feature looks less like clown vomit
-- Mobile functionality
+- A way to save your fine work
+- Mobile functionality?
 
 ## What Was It All For?
 I built this as part of the Odin Project's curriculum. The main purpose of this project was to learn about DOM manipulation. I also became more comfortable with functions and event listeners while working on this.
