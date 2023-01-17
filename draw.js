@@ -100,17 +100,17 @@ function gridSizeIndicator(gridSize) {
     let smallButtonLight = document.getElementById("small");
 
     if (gridSize === 16) {
-        largeButtonLight.style.backgroundColor = "#2195b5";
+        largeButtonLight.style.backgroundColor = "#1a718a";
         mediumButtonLight.style.backgroundColor = "#003153";
         smallButtonLight.style.backgroundColor = "#003153";
     }
     else if (gridSize === 32) {
-        mediumButtonLight.style.backgroundColor = "#2195b5";
+        mediumButtonLight.style.backgroundColor = "#1a718a";
         smallButtonLight.style.backgroundColor = "#003153";
         largeButtonLight.style.backgroundColor = "#003153";
     }
     else if (gridSize === 64) {
-        smallButtonLight.style.backgroundColor = "#2195b5";
+        smallButtonLight.style.backgroundColor = "#1a718a";
         mediumButtonLight.style.backgroundColor = "#003153";
         largeButtonLight.style.backgroundColor = "#003153";
     }
@@ -122,19 +122,19 @@ function pixelColorIndicator(pixelColor) {
     let eraserButtonLight = document.getElementById("eraser");
 
     if (pixelColor == "#000000") {
-        blackButtonLight.style.backgroundColor = "#2195b5";
+        blackButtonLight.style.backgroundColor = "#1a718a";
         rainbowButtonLight.style.backgroundColor = "#003153";
         eraserButtonLight.style.backgroundColor = "#003153";
     }
 
     else if (pixelColor == "rainbow") {
-        rainbowButtonLight.style.backgroundColor = "#2195b5";
+        rainbowButtonLight.style.backgroundColor = "#1a718a";
         blackButtonLight.style.backgroundColor = "#003153";
         eraserButtonLight.style.backgroundColor = "#003153";
     }
 
     else if (pixelColor == "eraser") {
-        eraserButtonLight.style.backgroundColor = "#2195b5";
+        eraserButtonLight.style.backgroundColor = "#1a718a";
         blackButtonLight.style.backgroundColor = "#003153";
         rainbowButtonLight.style.backgroundColor = "#003153";
     }
