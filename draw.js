@@ -27,10 +27,9 @@ function createCanvas(gridSize) {
         let pixel = document.createElement("div");
         pixel.className = "pixel";
         grid.insertAdjacentElement("beforeend", pixel);
-
-        let gridPixels = document.querySelectorAll(".pixel");
-        gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorPixels));
     }
+    let gridPixels = document.querySelectorAll(".pixel");
+        gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorPixels));
 }
 
 function colorPixels() {
