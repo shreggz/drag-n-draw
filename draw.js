@@ -76,9 +76,9 @@ function solidPixels() {
     pixelColor = "#000000";
 }
 
-function rainbowPixels() {
+function rainbowPixels(randomColor) {
     const randomPixels = Array.from(document.getElementsByClassName("pixel"));
-    randomPixels.forEach(randomColorGenerator);
+    randomPixels.forEach(pixel => randomColorGenerator());
 }
 
 function randomColorGenerator() {
