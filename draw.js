@@ -1,5 +1,7 @@
 let gridSize = 16;
 let pixelColor = "#000000";
+const colorButtons = document.querySelectorAll('.color-choice');
+colorButtons.forEach(colorButton => colorButton.addEventListener("click", changePixelColor));
 
 const small = document.getElementById("small");
 small.addEventListener("click", smallPixels);
@@ -13,15 +15,6 @@ large.addEventListener("click", largePixels)
 const clear = document.getElementById("clear");
 clear.addEventListener("click", clearCanvas)
 
-const eraser = document.getElementById("eraser");
-eraser.addEventListener("click", erasePixels);
-
-const solid = document.getElementById("solid");
-solid.addEventListener("click", solidPixels);
-
-const rainbow = document.getElementById("rainbow");
-rainbow.addEventListener("click", rainbowPixels);
-
 createCanvas(gridSize);
 
 function createCanvas(gridSize) {
@@ -33,10 +26,39 @@ function createCanvas(gridSize) {
     for (let i = 1; i <= gridArea; i++) {
         let pixel = document.createElement("div");
         pixel.className = "pixel";
-        pixel.addEventListener("mouseover", () => {
-            pixel.style.backgroundColor = pixelColor;
-        })
         grid.insertAdjacentElement("beforeend", pixel);
+
+        let gridPixels = document.querySelectorAll(".pixel");
+        gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorPixels));
+    }
+}
+
+function colorPixels() {
+    switch (pixelColor) {
+        case "rainbow":
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            break;
+        case "eraser":
+            this.style.backgroundColor = "#ffffff";
+            break;
+        default:
+            this.style.backgroundColor = "#000000";
+            break;
+    }
+
+}
+
+function changePixelColor(event) {
+    switch (event.target.dataset.color) {
+        case "rainbow":
+            pixelColor = "rainbow";
+            break;
+        case "eraser":
+            pixelColor = "eraser";
+            break;
+        default:
+            pixelColor = "black";
+            break;
     }
 }
 
@@ -63,27 +85,6 @@ function clearCanvas() {
     for (pixel of clearPixels) {
         pixel.style.backgroundColor = "#ffffff";
     }
-}
-
-function erasePixels() {
-    pixelColor = "#ffffff";
-}
-
-function solidPixels() {
-    pixelColor = "#000000";
-}
-
-function rainbowPixels(randomColor) {
-    const randomPixels = Array.from(document.getElementsByClassName("pixel"));
-    randomPixels.forEach(pixel => randomColorGenerator());
-}
-
-function randomColorGenerator() {
-    const randomR = Math.floor(Math.random() * 256);
-    const randomG = Math.floor(Math.random() * 256);
-    const randomB = Math.floor(Math.random() * 256);
-    const randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
-    pixelColor = randomColor;
 }
 
 console.log("hi");
