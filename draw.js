@@ -32,20 +32,30 @@ function createCanvas(gridSize) {
         grid.insertAdjacentElement("beforeend", pixel);
     }
     let gridPixels = document.querySelectorAll(".pixel");
-        gridPixels.forEach(gridPixel => gridPixel.addEventListener('mouseover', colorPixels));
+        gridPixels.forEach(gridPixel => {
+            gridPixel.addEventListener('mouseover', colorPixels);
+            gridPixel.addEventListener('touchstart', colorPixels);
+            gridPixel.addEventListener('touchmove', colorPixels);
+            gridPixel.addEventListener('touchend', colorPixels);
+        });    
 }
 
-function colorPixels() {
-    switch (pixelColor) {
-        case "rainbow":
-            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-            break;
-        case "eraser":
-            this.style.backgroundColor = "#ffffff";
-            break;
-        default:
-            this.style.backgroundColor = "#000000";
-            break;
+function colorPixels(event) {
+    if (event.buttons === 1 || event.type === "touchstart") {
+        let touch = event.changedTouches ? event.changedTouches[0] : null;
+        let target = touch ? document.elementFromPoint(touch.clientX, touch.clientY) : this;
+
+        switch (pixelColor) {
+            case "rainbow":
+                this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                break;
+            case "eraser":
+                this.style.backgroundColor = "#ffffff";
+                break;
+            default:
+                this.style.backgroundColor = "#000000";
+                break;
+        }
     }
 }
 
